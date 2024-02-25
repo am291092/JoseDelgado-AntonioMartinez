@@ -126,7 +126,7 @@ function actualizarReloj() {
                 
                 
             var cliente = {
-		correo: "jose@jose.com",
+		correo: document.getElementById("correo").innerHTML,
 		saldo: saldo
 			
 	};
@@ -139,7 +139,7 @@ function actualizarReloj() {
 
 			data: JSON.stringify(cliente),
 			success: function(data) {
-				
+				alert(data);
 				
 			 
 			}

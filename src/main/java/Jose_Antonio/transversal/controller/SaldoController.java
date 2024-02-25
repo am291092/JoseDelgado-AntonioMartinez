@@ -24,7 +24,7 @@ public class SaldoController {
 		UsuarioDTO user =servicioUsuario.findById(cliente.getCorreo());
 		int saldoNuevo=cliente.getSaldo();
 		user.setSaldo(saldoNuevo);
-		
+		System.out.println("saldonuevo"+saldoNuevo+cliente.getCorreo());
 		
 		servicioUsuario.save(user);
 		

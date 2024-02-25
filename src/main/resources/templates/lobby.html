@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>The Last Drop Casino</title>
+	<script th:src="@{/lobby/jquery-3.7.1.js}"></script>
+	<script th:src="@{/lobby/lobby.js}"></script>
+	<script th:src="@{/lobby/carrusel.js}"></script>
+	<link href="lobby.css" rel="stylesheet">
+	<link href="carrusel.css" rel="stylesheet">
+</head>
+<body>
+<header>
+        <div id="logo"><a href="#"><img src="lobby/img/logo.png" alt="logo"></a></div>
+        <div>
+            <p id="tiempo"></p>
+        </div>
+        <div id="inicio">
+            <p><span th:text="${correo}" id="correo"></span><span><a th:href="@{/}"><img src="lobby/img/logou.png" alt="logo"></a></span></p>
+        </div>
+        
+    </header>
+
+<div id="contenedorCarrusel">
+<div id="wrap">
+  <a th:href="@{/lobby/ruleta(correo=${correo})}" class="hb">
+    <div class="c">
+      <img src="lobby/img/ruletaIMG.png" alt=""/>
+      <div class="txt">
+        <h1>Ruleta</h1>
+        <p>Ruleta Arcana</p>
+      </div>
+    </div>
+  </a>
+  <div class="fullBg">
+    <img src="lobby/img/ruletaIMG.png" alt=""/>
+  </div>
+    <a th:href="@{/lobby/galgos(correo=${correo})}" class="hb">
+    <div class="c">
+      <img src="lobby/img/galgosL.png" alt=""/>
+      <div class="txt">
+        <h1>Carregas de galgos</h1>
+        <p>Carrera oficiales de Galgos Hextech</p>
+      </div>
+    </div>
+  </a>
+  <div class="fullBg">
+    <img src="lobby/img/galgosL.png" alt=""/>
+  </div>
+</div>
+</div>
+
+
+   
+
+	
+	
+	  <!-- Div ocultos para la insercion de fichas -->
+        <!-- Modal de Ingresar Dinero Ficticio -->
+        <div id="modalIngresar" class="modal">
+            <div class="modal-contenido">
+                <h2>Ingrese la cantidad de fichas</h2>
+                <p id="error"></p>
+                <input type="text" id="nuevasFichas" >
+                <button id="meter" onclick="ingresar();">Ingresar fichas</button>
+                <button id="cerrar" onclick="cerrarModal();">Cancelar</button>
+            </div>
+        </div>
+
+        <!-- Modal de Numero ganador-->
+        <div id="modalGanador" class="modalG">
+            <div class="modal-contenido">
+                <h2 id="ganadora"></h2>
+                <p id="textoGanancias"></p>
+            </div>
+        </div>
+
+
+    </div>
+
+    
+
+    <footer>
+        <div id="botonF">
+            <div class="botonesJugar">
+                <button class="ingresar" id="bIngresar" onclick="mostrarModal();">INGRESAR</button>
+                <button class="retirar" id="bRetirar" onclick="retirar();">RETIRAR</button>
+            </div>
+            <form id="meterF">
+                <label>¿ Cuantas fichas ?</label>
+                <input type="number" id="nuevasFichas" >
+                <input type="button" id="meter" value="InsertarFichas">
+            </form>
+
+        </div>
+
+        <div id="saldo">
+            <p>Fichas:</p>
+            <p id="misFichas" th:text="${fichitas}"></p>
+        </div>
+    </footer>
+
+
+</body>
+</html>

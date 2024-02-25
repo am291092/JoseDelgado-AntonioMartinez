@@ -1,0 +1,198 @@
+@font-face {
+    font-family: arcane;
+    src: url('font/Arcane Nine.otf') format('truetype');
+}
+
+
+body {
+    font-family: arcane;
+    background-image: url(lobby/img/background.png);
+    color: #dcb038;
+    overflow: hidden;
+}
+#contenedorCarrusel{
+	display:flex;
+	width: 100%;
+	height: 80%;
+	
+}
+
+
+
+header {
+    box-shadow: #fff;
+    background-color: #303030b9;
+    border-radius: 8px;
+    border: 5px solid;
+    border-color: #404040;
+    float: left;
+    width: 100%;
+    animation: flicker 3s infinite alternate;
+}
+
+
+/* Animacion para efecto de neon que parpadea */
+@keyframes flicker {
+    
+    0%, 18%, 22%, 25%, 53%, 57%, 100% {
+  
+        box-shadow:
+        0px 0 1px #797979,
+        0px 0 5px #797979,
+        0px 0 9px #797979,
+        0px 0 10px #dbaf37,
+        0px 0 15px #dbaf37,
+        0px 0 20px #dbaf37,
+        0px 0 25px #dbaf37,
+        0px 0 30px #dbaf37;
+    
+    }
+    
+    20%, 24%, 55% {        
+        box-shadow: none;
+    }    
+  }
+
+
+
+#logo {
+
+    float: left;
+    width: 10%;
+}
+
+#logo img {
+
+    width: 100px;
+    height: 100px;
+}
+
+#inicio {
+    margin-left: 10%;
+    width: 75%;
+    margin-top: -90px;
+}
+
+#inicio img {
+    margin-left: 1%;
+    width: 10px;
+}
+
+#musica{
+    float: left;
+    margin-left: 95%;
+    margin-top: -50px;
+}
+
+
+#tiempo {
+    margin-top: 2%;
+    float: left;
+}
+
+#inicio {
+    float: left;
+    width: 87%;
+    text-align: right;
+}
+
+
+
+/* Estilos para los modales */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #303030b9;
+
+    z-index: 10;
+
+}
+
+.modal-contenido {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #303030e0;
+    padding: 20px;
+    border-radius: 8px;
+    border: 5px solid;
+    border-color: #404040;
+    box-shadow: 0px 0px 10px #303030b9;
+
+}
+
+#modalGanador {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #303030b9;
+    border-radius: 8px;
+    border: 5px solid;
+    border-color: #404040;
+    z-index: 1;
+
+}
+
+#error {
+    color: red;
+    font-weight: bold;
+}
+
+
+footer {
+    float: left;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    position: fixed;
+    background-color: #303030b9;
+    border-radius: 8px;
+    border: 5px solid;
+    border-color: #404040;
+   
+}
+
+
+#botonF {
+    float: left;
+    width: 70%;
+    margin-left: 2%;
+}
+
+#botonF button {
+    background: none;
+    border: none;
+    color: #dcb038;
+    font-size: 20px;
+    margin-top: 30px;
+}
+#botonF button:hover {
+    
+    cursor:pointer;
+    color: rgb(188, 146, 33);
+    transform:scale(105%);
+}
+
+#meterF {
+    visibility: hidden;
+}
+
+#saldo {
+    
+    width: 5%;
+    margin-left: 90%;
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+button {
+    font-family: arcane;
+}

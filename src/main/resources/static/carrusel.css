@@ -1,0 +1,151 @@
+@charset "ISO-8859-1";
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+body,
+html {
+	overflow: hidden;
+	height: 100%;
+	font-size: 16px;
+
+}
+
+#wrap {
+	
+	
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: stretch;
+	
+}
+
+.hb {
+	margin-left:auto;
+	margin-right:auto;
+	width: 35%;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	z-index: 2;
+	trasnform: scale(0.97);
+}
+
+.c {
+	position: relative;
+	display: block;
+	max-width: 90%;
+}
+
+.c img {
+	position: relative;
+	display: block;
+	width: 100%;
+	height: auto;
+	z-index: 2;
+	filter: grayscale(60%);
+
+	transition: ease-in-out 0.2s;
+}
+
+.c img:hover {
+	filter: grayscale(0%);
+	transform: scale(1.05);
+	border-radius: 7% 7% 7% 7% / 7% 7% 7% 7%;
+}
+
+.txt {
+	position: absolute;
+	background-color: #303030b9;
+	    border: 1px solid;
+    border-color: #404040;
+	top: 100%;
+	left: 10%;
+	width: 80%;
+	opacity: 0;
+	padding: 1em 0 0 1em;
+	border-left: 1px solid;
+	z-index: 1;
+	transform: scaleY(1) translateY(-50px);
+	transition: transform 0.2s, opacity 0.5s;
+}
+
+h1 {
+	font-size: 1.2em;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+.hb:hover .txt {
+	opacity: 1;
+	transform: scaleY(1) translateY(0);
+}
+
+.fullBg {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	transition: transform 0.5s, opacity 0.5s;
+	transform: scale(1);
+
+}
+
+.fullBg img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+	opacity: 0.5;
+}
+
+.hb:hover+.fullBg {
+	opacity: 1;
+	transform: scale(1.02);
+}
+
+.credits {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	padding: 1.5em;
+	font-size: 0.8em;
+	text-align: right;
+	font-style: italic;
+	opacity: 0.8;
+	transition: opacity 0.2;
+	z-index: 3;
+}
+
+.credits:hover {
+	text-decoration: underline;
+	opacity: 1;
+}
+
+@media screen and (max-width: 990px){
+	
+	.hb {
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+    
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    z-index: 2;
+  
+    transform: translateY(-50px);
+	
+
+	}
+}

@@ -1,0 +1,963 @@
+@font-face {
+	font-family: arcane;
+	src: url('font/Arcane Nine.otf') format('truetype');
+}
+
+
+body {
+	font-family: arcane;
+	background-image: url(img/background.png);
+	color: #dcb038;
+}
+
+
+header {
+	box-shadow: #fff;
+	background-color: #303030b9;
+	border-radius: 8px;
+	border: 5px solid;
+	border-color: #404040;
+	float: left;
+	width: 100%;
+	animation: flicker 3s infinite alternate;
+}
+
+
+/* Animacion para efecto de neon que parpadea */
+@keyframes flicker {
+
+	0%,
+	18%,
+	22%,
+	25%,
+	53%,
+	57%,
+	100% {
+
+		box-shadow:
+			0px 0 1px #797979,
+			0px 0 5px #797979,
+			0px 0 9px #797979,
+			0px 0 10px #dbaf37,
+			0px 0 15px #dbaf37,
+			0px 0 20px #dbaf37,
+			0px 0 25px #dbaf37,
+			0px 0 30px #dbaf37;
+
+	}
+
+	20%,
+	24%,
+	55% {
+		box-shadow: none;
+	}
+}
+
+
+
+#logo {
+
+	float: left;
+	width: 10%;
+}
+
+#logo img {
+
+	width: 100px;
+	height: 100px;
+}
+
+#inicio {
+	margin-left: 10%;
+	width: 75%;
+	margin-top: -90px;
+}
+
+#inicio img {
+	margin-left: 1%;
+	width: 10px;
+}
+
+#musica {
+	float: left;
+	margin-left: 95%;
+	margin-top: -50px;
+}
+
+
+#tiempo {
+	margin-top: 2%;
+	float: left;
+}
+
+#inicio {
+	float: left;
+	width: 87%;
+	text-align: right;
+}
+
+#principal {
+	margin-top: 10px;
+	width: 100%;
+	float: left;
+	height: 678px;
+}
+
+
+#siguienteTirada {
+	margin-top: 10px;
+	width: 100%;
+	float: left;
+}
+
+
+#cristal {
+	font-size: 20px;
+	float: left;
+	margin-left: 24%;
+	background-color: #30303087;
+	width: 50%;
+	position: absolute;
+	text-align: center;
+	border-radius: 14px;
+}
+
+#barraProg {
+	font-size: 20px;
+	margin-left: 24%;
+	background-color: #ff00aa;
+	width: 50%;
+	border-radius: 14px;
+	animation: 2s infinite alternate ease-out respirar;
+}
+
+/* Function */
+
+@keyframes respirar {
+	from {
+		background-color: #ff00aa;
+	}
+
+	to {
+		background-color: #ff69cd;
+	}
+}
+
+#tirar button {
+	margin-left: 45%;
+	background: none;
+	border: none;
+	color: #dcb038;
+	font-size: 50px;
+}
+
+#mensaje {
+	visibility: hidden;
+	font-size: 18px;
+	margin-right: 1%;
+	text-align: center;
+}
+
+#divTablero {
+	margin-top: 20px;
+	float: left;
+	width: 55%;
+}
+
+#pop {
+	background-color: #30303087;
+	visibility: hidden;
+	text-align: center;
+	height: 50px;
+	float: left;
+	width: 934px;
+	margin-left: 59px;
+	font-size: 20px;
+}
+
+
+
+.tg {
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin-left: auto;
+	margin-right: auto;
+	color: white;
+}
+
+.tg td {
+	border-color: rgb(255, 255, 255);
+	border-style: solid;
+	border-width: 1px;
+	font-size: 16px;
+	overflow: hidden;
+	padding: 9px 18.5px;
+	word-break: normal;
+	padding: 10px;
+}
+
+.tg th {
+	border-color: rgb(255, 255, 255);
+	border-style: solid;
+	border-width: 1px;
+	font-size: 16px;
+	font-weight: normal;
+	overflow: hidden;
+	padding: 20px 26px;
+	word-break: normal;
+}
+
+
+
+.tg .tg-9wq8 {
+	text-align: center;
+	vertical-align: middle;
+}
+
+.tg .tg-0pky {
+	text-align: center;
+	vertical-align: top;
+}
+
+.rojo {
+
+	background-color: #b4009f;
+
+}
+
+.rojo:hover {
+	font-weight: bolder;
+	background-color: rgb(72, 25, 87);
+	text-shadow: 2px 2px 10px #DBAF37;
+}
+
+.negro {
+	background-color: #00319c;
+}
+
+.negro:hover {
+	font-weight: bolder;
+	background-color: #11005e;
+	text-shadow: 2px 2px 10px #DBAF37;
+}
+
+.fondo:hover {
+	font-weight: bolder;
+	background-color: rgb(0, 43, 21);
+	text-shadow: 2px 2px 10px #DBAF37;
+}
+
+/*
+Dia triste no encontra la forma de rotar lo de dento
+.trotar {
+    transform: rotate(270deg);
+
+    border: none;
+    color: white;
+}*/
+
+.fondo {
+	background-color: rgb(1, 97, 44);
+}
+
+.fondo:hover {
+	font-weight: bolder;
+	background-color: rgb(0, 43, 21);
+	text-shadow: 2px 2px 10px yellow;
+}
+
+
+.vacio {
+	border-width: 0px !important;
+}
+
+.cTablero {
+	width: 50px;
+	margin-top: -15px;
+	margin-left: -28px;
+	position: absolute;
+
+}
+
+
+#tablero {
+	float: left;
+	width: 100%;
+
+}
+
+#hotcold {
+	font-size: 20px;
+	margin-left: 50px;
+	margin-top: 30px;
+	float: left;
+	width: 100%;
+}
+
+#hotcold th {
+	text-align: center;
+}
+
+#hotcold tr {
+	text-align: center;
+}
+
+#hot {
+	background-color: #303030b9;
+	margin-left: 5%;
+	float: left;
+	width: 40%;
+}
+
+
+#cold {
+	margin-left: 2%;
+	float: left;
+	width: 40%;
+	background-color: #303030b9;
+}
+
+#notificacion {
+	font-size: 20px;
+	margin-top: 70px;
+	float: left;
+	width: 12%;
+	background-color: #303030b9;
+	text-align: center;
+
+}
+
+#divRuleta {
+	margin-top: 75px;
+	margin-left: 55px;
+	float: left;
+	width: 28%;
+
+}
+
+#numGanador {
+	text-align: center;
+	font-size: 50px;
+	font-weight: bolder;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: black;
+}
+
+
+#ruleta {
+
+	animation: bounce2 10s ease infinite;
+}
+
+/* Animaciones de la bola */
+
+@keyframes bounce2 {
+
+	0%,
+	20%,
+	50%,
+	80%,
+	100% {
+		transform: translateY(0);
+	}
+
+	50% {
+		transform: translateY(-30px);
+	}
+
+}
+
+
+
+@keyframes wobble {
+	0% {
+		transform: translateX(0%);
+	}
+
+	15% {
+		transform: translateX(-6%) rotate(-5deg);
+	}
+
+	30% {
+		transform: translateX(6%) rotate(3deg);
+	}
+
+	45% {
+		transform: translateX(-5%) rotate(-3deg);
+	}
+
+	60% {
+		transform: translateX(5%) rotate(2deg);
+	}
+
+	75% {
+		transform: translateX(-4%) rotate(-1deg);
+	}
+
+	100% {
+		transform: translateX(0%);
+	}
+}
+
+
+#imgRul {
+	margin-left: 118px;
+	width: 300px;
+	height: 300px;
+	filter: drop-shadow(0 0 20px rgb(167, 167, 167));
+}
+
+
+
+#ultNum {
+	font-size: 20px;
+	float: left;
+	width: 100%;
+	text-align: center;
+	background-color: #303030b9;
+}
+
+
+
+/* Estilos para los modales */
+.modal {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #303030b9;
+
+	z-index: 1;
+
+}
+
+.modal-contenido {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #303030e0;
+	padding: 20px;
+	border-radius: 8px;
+	border: 5px solid;
+	border-color: #404040;
+	box-shadow: 0px 0px 10px #303030b9;
+
+}
+
+#modalGanador {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #303030b9;
+	border-radius: 8px;
+	border: 5px solid;
+	border-color: #404040;
+	z-index: 1;
+
+}
+
+#error {
+	color: red;
+	font-weight: bold;
+}
+
+
+footer {
+	float: left;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	position: fixed;
+	background-color: #303030b9;
+	border-radius: 8px;
+	border: 5px solid;
+	border-color: #404040;
+}
+
+
+#fichas {
+	float: left;
+	width: 70%;
+}
+
+#fichas button {
+	background: none;
+	border: none;
+}
+
+#fichas img {
+	width: 100px;
+	height: 100px;
+	margin-top: 10px;
+}
+
+#botonF {
+	float: left;
+	width: 20%;
+}
+
+#botonF button {
+	background: none;
+	border: none;
+	color: #dcb038;
+	font-size: 20px;
+	margin-top: 30px;
+}
+#botonF button:hover {
+    
+    cursor:pointer;
+    color: rgb(188, 146, 33);
+    transform:scale(105%);
+}
+
+#meterF {
+	visibility: hidden;
+}
+
+#saldo {
+	float: left;
+	width: 10%;
+	margin-top: 20px;
+	font-size: 20px;
+}
+
+
+@media only screen and (min-width: 838px) and (max-width:1024px) {
+    html,  body{
+         max-width: 100%;
+         
+         
+     }
+	header {
+		box-shadow: #fff;
+		background-color: #303030b9;
+		border-radius: 8px;
+		border: 5px solid;
+		border-color: #404040;
+		float: left;
+		width: 100%;
+		animation: flicker 3s infinite alternate;
+	}
+
+	#siguienteTirada {
+		width: 100%;
+		margin-bottom: -84px;
+	}
+
+	#cristal {
+		background-color: #ff00aa72;
+		margin-left: 28%;
+	}
+
+
+	#tirar {
+		margin-top: 25px;
+		margin-left: -11px;
+		
+	}
+
+	#barraProg {
+		display: none;
+	}
+
+	#pop {
+		width: 691px;
+		margin-left: 0;
+	}
+
+	#principal {
+		width: 100%;
+		/* Asegúrate de que la zona principal ocupa todo el ancho disponible */
+		padding-left: 10px;
+		margin-top: 10px;
+		/* Agrega algo de relleno para no tener el contenido tan pegado a los bordes */
+		box-sizing: border-box;
+		/* Asegura que el padding no afecte el ancho total */
+	}
+
+	.tg {
+		width: 100%;
+		/* Hace que la tabla ocupe todo el ancho disponible */
+		font-size: 12px;
+		/* Reduce el tamaño de la fuente para que quepa mejor en pantallas pequeñas */
+	}
+
+	.tg th,
+	.tg td {
+		padding: 5px;
+		/* Reduce el padding para ahorrar espacio */
+	}
+
+	/* Opcional: Reducir el tamaño de las imágenes dentro de la tabla, si las hay */
+	.tg img {
+		width: 50px;
+		/* Reduce el tamaño de las imágenes */
+		height: auto;
+		/* Mantiene la proporción de las imágenes */
+	}
+
+	#divTablero {
+		width: 70%;
+		/* Asegura que el contenedor de la tabla también ocupe todo el ancho */
+		margin-bottom: 50px;
+
+	}
+
+
+
+	#divRuleta {
+		width: 30%;
+		/* Ajusta el ancho del div al 100% para que ocupe todo el espacio disponible */
+		margin-top: -30px;
+		/* Ajusta el margen superior para asegurar espacio adecuado */
+		float: left;
+		/* Anula cualquier flotación para asegurar que el div no esté alineado de manera extraña */
+		display: block;
+		/* Asegura que el div se muestre correctamente */
+	}
+
+	#imgRul {
+		display: none;
+		position: relative;
+		/* Esto hace que la imagen sea el contenedor de referencia para posicionar el párrafo */
+		margin-left: 32%;
+		width: 500px;
+		height: 500px;
+	}
+
+	#numGanador {
+		display: none;
+		position: absolute;
+		/* Posicionamiento absoluto respecto a su contenedor más cercano con posición relativa */
+		top: 49%;
+		/* Coloca el elemento en el centro vertical del contenedor */
+		left: 61%;
+		/* Coloca el elemento en el centro horizontal del contenedor */
+		font-size: 110px;
+		/* Ajusta el tamaño de la fuente según necesites */
+		transform: translate(-50%, -50%);
+		/* Ajusta el elemento para que su centro esté exactamente en el centro del contenedor */
+
+		/* Puedes necesitar ajustar la posición y el tamaño del texto del número ganador aquí también */
+	}
+
+	#notificacion {
+		font-size: 16px;
+		margin-left: 30px;
+		width: 20%;
+	}
+
+	#ultimos {
+		width: 100%;
+		margin-left: 100%;
+		
+	}
+
+	/*Modal de la bola*/
+	.modalRuleta {
+		display: none;
+		/* Oculta por defecto */
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		/* Hace que el modal ocupe todo el ancho de la pantalla */
+		height: 100%;
+		/* Hace que el modal ocupe toda la altura de la pantalla */
+
+		padding: 20px;
+		border-radius: 0;
+		/* Elimina el radio del borde para que ocupe toda la pantalla */
+		z-index: 1;
+		/* Asegúrate de que es suficientemente alto para estar sobre otros elementos */
+		overflow: hidden;
+		/* Permite el desplazamiento si el contenido es más grande que la pantalla */
+	}
+
+	.modalRuleta img {
+		position: relative;
+		/* Cambiado de absolute a relative */
+		top: 50%;
+		/* Ajusta según necesites para centrar verticalmente */
+		transform: translateY(-50%);
+		/* Ajusta según necesites para centrar verticalmente */
+		max-width: 600px;
+		/* O cualquier otra medida que prefieras para tu contenido */
+		padding: 20px;
+		border-radius: 8px;
+	}
+
+
+
+	/* Aquí puedes agregar ajustes adicionales para otros elementos dentro de #divRuleta si es necesario */
+
+	#fichas {
+		float: left;
+		width: 70%;
+	}
+
+	#fichas button {
+		background: none;
+		border: none;
+	}
+
+	#fichas img {
+		width: 60px;
+		height: 60px;
+		margin-top: 18px;
+	}
+
+
+
+
+	footer {
+		float: left;
+		width: 100%;
+		height: auto;
+		left: 0;
+		bottom: 0;
+		position: fixed;
+		background-color: #303030b9;
+		border-radius: 8px;
+		border: 5px solid;
+		border-color: #404040;
+		font-size: 10px;
+	}
+
+}
+
+@media only screen and (min-width: 425px) and (max-width:838px) {
+    html,  body{
+         max-width: 100%;
+         overflow-x: hidden !important;
+         
+         
+     }
+	header {
+		box-shadow: #fff;
+		background-color: #303030b9;
+		border-radius: 8px;
+		border: 5px solid;
+		border-color: #404040;
+		float: left;
+		width: 100%;
+		animation: flicker 3s infinite alternate;
+	}
+	
+	#tiempo{
+		margin-left: 30px;
+	}
+
+	#siguienteTirada {
+		width: 100%;
+		margin-bottom: -84px;
+	}
+
+	#cristal {
+		background-color: #ff00aa72;
+		margin-left: 28%;
+	}
+
+	#pop{
+		visibility: hidden;
+	}
+
+	#tirar {
+		margin-top: 25px;
+		margin-left: -44px;
+		
+	}
+
+	#barraProg {
+		display: none;
+	}
+
+	#pop {
+		width: 691px;
+		margin-left: 0;
+	}
+
+	#principal {
+		width: 100%;
+		/* Asegúrate de que la zona principal ocupa todo el ancho disponible */
+		padding-left: 10px;
+		margin-top: 10px;
+		/* Agrega algo de relleno para no tener el contenido tan pegado a los bordes */
+		box-sizing: border-box;
+		/* Asegura que el padding no afecte el ancho total */
+	}
+
+	.tg {
+		width: 100%;
+		/* Hace que la tabla ocupe todo el ancho disponible */
+		font-size: 12px;
+		/* Reduce el tamaño de la fuente para que quepa mejor en pantallas pequeñas */
+	}
+
+	.tg th,
+	.tg td {
+		padding: 5px;
+		/* Reduce el padding para ahorrar espacio */
+	}
+
+	/* Opcional: Reducir el tamaño de las imágenes dentro de la tabla, si las hay */
+	.tg img {
+		width: 50px;
+		/* Reduce el tamaño de las imágenes */
+		height: auto;
+		/* Mantiene la proporción de las imágenes */
+	}
+
+	#divTablero {
+		width: 70%;
+		/* Asegura que el contenedor de la tabla también ocupe todo el ancho */
+		margin-bottom: 50px;
+
+	}
+
+
+
+	#divRuleta {
+		width: 30%;
+		/* Ajusta el ancho del div al 100% para que ocupe todo el espacio disponible */
+		margin-top: -30px;
+		/* Ajusta el margen superior para asegurar espacio adecuado */
+		float: left;
+		/* Anula cualquier flotación para asegurar que el div no esté alineado de manera extraña */
+		display: block;
+		/* Asegura que el div se muestre correctamente */
+		
+	}
+
+	#imgRul {
+		display: none;
+		position: relative;
+		/* Esto hace que la imagen sea el contenedor de referencia para posicionar el párrafo */
+		margin-left: 28%;
+		width: 400px;
+		height: 400px;
+		
+	}
+
+	#numGanador {
+		display: none;
+		position: absolute;
+		/* Posicionamiento absoluto respecto a su contenedor más cercano con posición relativa */
+		top: 49%;
+		/* Coloca el elemento en el centro vertical del contenedor */
+		left: 55%;
+		/* Coloca el elemento en el centro horizontal del contenedor */
+		font-size: 70px;
+		/* Ajusta el tamaño de la fuente según necesites */
+		transform: translate(-50%, -50%);
+		/* Ajusta el elemento para que su centro esté exactamente en el centro del contenedor */
+
+		/* Puedes necesitar ajustar la posición y el tamaño del texto del número ganador aquí también */
+	}
+
+	#notificacion {
+		font-size: 16px;
+		margin-left: 30px;
+		width: 20%;
+	}
+
+	#ultimos {
+		width: 100%;
+		margin-left: 100%;
+		
+	}
+
+	/*Modal de la bola*/
+	.modalRuleta {
+		display: none;
+		/* Oculta por defecto */
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		/* Hace que el modal ocupe todo el ancho de la pantalla */
+		height: 100%;
+		/* Hace que el modal ocupe toda la altura de la pantalla */
+
+		padding: 20px;
+		border-radius: 0;
+		/* Elimina el radio del borde para que ocupe toda la pantalla */
+		z-index: 1;
+		/* Asegúrate de que es suficientemente alto para estar sobre otros elementos */
+		overflow: hidden;
+		/* Permite el desplazamiento si el contenido es más grande que la pantalla */
+	}
+
+	.modalRuleta img {
+		position: relative;
+		/* Cambiado de absolute a relative */
+		top: 50%;
+		/* Ajusta según necesites para centrar verticalmente */
+		transform: translateY(-50%);
+		/* Ajusta según necesites para centrar verticalmente */
+		max-width: 600px;
+		/* O cualquier otra medida que prefieras para tu contenido */
+		padding: 20px;
+		border-radius: 8px;
+	}
+
+
+
+	/* Aquí puedes agregar ajustes adicionales para otros elementos dentro de #divRuleta si es necesario */
+
+	#fichas {
+		float: left;
+		width: 70%;
+	}
+
+	#fichas button {
+		background: none;
+		border: none;
+	}
+
+	#fichas img {
+		width: 50px;
+		height: 50px;
+		
+		transform: scale(0.7);
+	}
+	
+	#saldo p{
+	display:none;
+	}
+	#botonF button {
+   
+    margin-top: 0px;
+}
+#misFichas{
+	
+	display:block !important;
+}
+
+
+
+	footer {
+		float: left;
+		width: 100%;
+		height: 20%;
+		left: 0;
+		bottom: 0;
+		position: fixed;
+		background-color: #303030b9;
+		border-radius: 8px;
+		border: 5px solid;
+		border-color: #404040;
+		font-size: 8px;
+		
+	}
+
+}

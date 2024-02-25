@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="login/style.css" rel="stylesheet" />
+</head>
+<body>
+    <section class="user">
+        <div class="user_options-container">
+          <div class="user_options-text">
+            <div class="user_options-unregistered">
+              <h2 class="user_unregistered-title">No tienes cuenta?</h2>
+              <p class="user_unregistered-text">Unete a nosotros y gana.</p>
+              <div id="logo"><img src="lobby/img/logo.png" class="logoLogin" alt="logo"></div>
+              <button class="user_unregistered-signup" id="signup-button">Sign up</button>
+            </div>
+      
+            <div class="user_options-registered">
+              <h2 class="user_registered-title">Ya estas registrado?</h2>
+              <p class="user_registered-text">Entra y gana.</p>
+              <div id="logo"><img src="lobby/img/logo.png" class="logoLogin" alt="logo"></div>
+              <button class="user_registered-login" id="login-button">Login</button>
+            </div>
+          </div>
+          
+          <div class="user_options-forms" id="user_options-forms">
+           <div class="user_forms-signup ">
+              <h2 class="forms_title">Registro</h2>
+              <form class="forms_form" th:action="@{/recuperarValores}" method="POST" th:object="${usuario}">
+                <fieldset class="forms_fieldset">
+                  <div class="forms_field">
+                    <input type="text"placeholder="Correo"  class="forms_field-input" th:field="*{correo}" />
+                    <div th:if="${#fields.hasErrors('correo')}" th:errors="*{correo}" />
+                  </div>
+                  <div class="forms_field">
+                    <input type="text" placeholder="Nombre Usuario" class="forms_field-input" th:field="*{nombre_usuario}" />
+                    
+                  </div>
+                    <div class="forms_field">
+                    <input type="text" placeholder="Nombre" class="forms_field-input" th:field="*{nombre_real}"  th:name="nombre_real"/>
+                    
+                  </div>
+                   <div class="forms_field">
+                    <input type="text" placeholder="Apellido1" class="forms_field-input" th:field="*{apellido1}"/>
+                    
+                  </div>
+                   <div class="forms_field">
+                    <input type="text" placeholder="Apellido2" class="forms_field-input" th:field="*{apellido2}" />
+                    
+                  </div>
+                  <div class="forms_field">
+                    <input type="password" placeholder="Contraseña" class="forms_field-input" th:field="*{contrasena}"  />
+                    <div th:if="${#fields.hasErrors('contrasena')}" th:errors="*{contrasena}" />
+                  </div>
+
+                 
+                </fieldset>
+                <div class="forms_buttons">
+                  <input type="submit" value="Registrate" class="forms_buttons-action">
+                </div>
+              </form>
+            </div>
+            <div class="user_forms-login">
+              <h2 class="forms_title">Acceso</h2>
+              <form class="forms_form" th:action="@{/login}" method="POST" th:object="${usuario}">
+                <fieldset class="forms_fieldset">
+                  <div class="forms_field">
+                    <input type="text"placeholder="Correo"  class="forms_field-input" th:field="*{correo}" />
+                    <div th:if="${#fields.hasErrors('correo')}" th:errors="*{correo}" />
+                  </div>
+                  <div class="forms_field">
+                    <input type="password" placeholder="Contraseña" class="forms_field-input" th:field="*{contrasena}"  />
+                    <div th:if="${#fields.hasErrors('contrasena')}" th:errors="*{contrasena}" />
+                  </div>
+                </fieldset>
+                <div class="forms_buttons">
+                <p th:text="${error}" > </p>
+                  <button type="button" class="forms_buttons-forgot">Has olvidado tu contraseña?</button>
+                  <input type="submit" value="Log In" class="forms_buttons-action">
+                </div>
+              </form>
+            </div>
+           
+          </div>
+        </div>
+      </section>
+      <script src="login/script.js"></script>
+      <script src="general.js"></script>
+      <script src="jquery-3.7.1.js"></script>
+</body>
+</html>

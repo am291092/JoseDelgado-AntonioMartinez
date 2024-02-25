@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="galgos.css">
+    <script th:src="@{/jquery-3.7.1.js}"></script>
+</head>
+<body>
+  <div id="header">
+    <div id="logo"><a th:href="@{/lobby}"><img src="img/logo.png" alt="logo"></a></div>
+    <div id="lugar"><div id="textoLugar"></div> <div id="horaLugar"></div></div>
+    <div id="reloj"><span id="textoReloj"></span> 
+    <div id="LogIn">
+ <span th:text="${correo}" id="correo"></span><a href="#"><img src="img/logou.png" alt="logo" id="logoLogin"></a>
+  </div>
+  </div>
+  </div>
+    <div id="contenido">
+        <div id="clasificacion">
+
+          <div class="filaGalgo" id="galgo1"><span id="imgGalgo1" class="imgGalgo"></span> <div class="infoGalgo"> N:<span id="NumeroGalgo1"></span> <span id="NombreGalgo1"></span> <span class="textoCuota">Cuota:<span id="CuotaGalgo1"></span></span></div></div>
+          <div class="filaGalgo" id="galgo2"><span id="imgGalgo2" class="imgGalgo"></span> <div class="infoGalgo"> N:<span id="NumeroGalgo2"></span> <span id="NombreGalgo2"></span> <span class="textoCuota">Cuota:<span id="CuotaGalgo2"></span></span></div></div>
+          <div class="filaGalgo" id="galgo3"><span id="imgGalgo3" class="imgGalgo"></span> <div class="infoGalgo"> N:<span id="NumeroGalgo3"></span> <span id="NombreGalgo3"></span> <span class="textoCuota">Cuota:<span id="CuotaGalgo3"></span></span></div></div>
+          <div class="filaGalgo" id="galgo4"><span id="imgGalgo4" class="imgGalgo"></span> <div class="infoGalgo"> N:<span id="NumeroGalgo4"></span> <span id="NombreGalgo4"></span> <span class="textoCuota">Cuota:<span id="CuotaGalgo4"></span></span></div></div>
+          <div class="filaGalgo" id="galgo5"><span id="imgGalgo5" class="imgGalgo"></span> <div class="infoGalgo"> N:<span id="NumeroGalgo5"></span> <span id="NombreGalgo5"></span> <span class="textoCuota">Cuota:<span id="CuotaGalgo5"></span></span></div></div>
+          <div class="filaGalgo" id="galgo6"><span id="imgGalgo6" class="imgGalgo"></span> <div class="infoGalgo"> N:<span id="NumeroGalgo6"></span> <span id="NombreGalgo6"></span> <span class="textoCuota">Cuota:<span id="CuotaGalgo6"></span></span></div></div>
+          <div class="filaGalgo" id="galgo7"><span id="imgGalgo7" class="imgGalgo"></span> <div class="infoGalgo"> N:<span id="NumeroGalgo7"></span> <span id="NombreGalgo7"></span> <span class="textoCuota">Cuota:<span id="CuotaGalgo7"></span></span></div></div>
+          <div class="filaGalgo" id="galgo8"><span id="imgGalgo8" class="imgGalgo"></span> <div class="infoGalgo"> N:<span id="NumeroGalgo8"></span> <span id="NombreGalgo8"></span> <span class="textoCuota">Cuota:<span id="CuotaGalgo8"></span></span></div></div>
+
+        </div>
+        <div id="progreso">
+          <div class="progressBarContainer"><div id="progressBar1" class="progressBar"></div></div>
+          <div class="progressBarContainer"><div id="progressBar2" class="progressBar"></div></div>
+          <div class="progressBarContainer"><div id="progressBar3" class="progressBar"></div></div>
+          <div class="progressBarContainer"><div id="progressBar4" class="progressBar"></div></div>
+          <div class="progressBarContainer"><div id="progressBar5" class="progressBar"></div></div>
+          <div class="progressBarContainer"><div id="progressBar6" class="progressBar"></div></div>
+          <div class="progressBarContainer"><div id="progressBar7" class="progressBar"></div></div>
+          <div class="progressBarContainer"><div id="progressBar8" class="progressBar"></div></div>
+
+
+        </div>
+       
+
+    </div>
+    <div id="footer">
+
+<div id="funcionalidad">
+  <button  id="simular" class="boton">Iniciar Carrera</button>
+
+
+
+</div>
+    
+
+<div id="ingresar">
+ <p>Saldo:<span th:text="${fichitas}" id="dinero"></span><span>€</span></p>
+  <button  id="ingresarPop" class="boton">INGRESAR</button>
+  <button  id="retirar" class="boton">RETIRAR</button>
+
+<div id="modalIngresar" class="modal">
+  <div class="modal-contenido">
+      <span class="cerrar" id="cerrarIngresar">&times;</span>
+      <h2>Ingrese la cantidad</h2>
+      <input type="number" id="ingresarCantidad" min="0">
+      
+      <button id="anadirSaldo" class="boton">Aceptar</button>
+      <button id="cancelaingreso" class="boton">Cancelar</button>
+  </div>
+</div>
+    </div>
+  </div>
+
+  <div id="modalApuesta" class="modal">
+    <div class="modal-contenido">
+        
+        <h2>Cantidad a apostar al galgo N: <span id="numeroApostar"> </span>, <span id="nombreApostar"> </span>, con una cuota de: <span id="cuotaApostar"> </span></h2>
+        <input type="number" id="cantidadApuesta" min="0">
+        
+        <button id="apostar" class="boton">Aceptar</button>
+        <button id="cancelaApuesta" class="boton">Cancelar</button>
+    </div>
+  </div>
+
+  <div id="modalPodio" class="modal">
+
+    <div class="modal-contenido">
+      <div id="GanadoresCarreraActual"></div>
+      <div id="mensajeGanado"></div>
+      
+      <button id="cerrarPodio" class="boton">Cerrar</button>
+  </div>
+  </div>
+
+  <div id="modalAnterior" class="modal">
+
+    <div class="modal-contenido">
+      
+      <h2>Carreras Anteriores</h2>
+      <div id="infoCarrerasAnteriores">   </div>
+      
+      <button id="cerrarAnterior" class="boton">Cerrar</button>
+  </div>
+
+  </div>
+
+    <script src="galgos.js"></script>
+</body>
+</html>

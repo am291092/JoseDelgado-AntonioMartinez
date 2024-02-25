@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+    <script th:src="@{/jquery-3.7.1.js}"></script>
+    <title>Ruleta</title>
+    
+</head>
+
+<body onload="barra()">
+    <header>
+        <div id="logo"><a th:href="@{/lobby}"><img src="img/logo.png" alt="logo"></a></div>
+        <div>
+            <p id="tiempo"></p>
+        </div>
+        <div id="inicio">
+            <p><span th:text="${correo}" id="correo"></span><span><a href="#"><img src="img/logou.png" alt="logo"></a></span></p>
+        </div>
+    </header>
+    </div>
+
+    <div id="principal">
+
+        <div id="siguienteTirada">
+
+            <div id="barra">
+                <div id="cristal">30</div>
+                <div id="barraProg" class="progress-bar" role="progressbar" aria-valuenow="30" aria-valuemin="0"
+                    aria-valuemax="30"><br></div>
+            </div>
+            <div id="tirar"><button>TIRAR YA</button></div>
+            <div id="mensaje">Selecciona una ficha antes de apostar</div>
+        </div>
+        
+        <div id="divTablero">
+            <div id="pop">
+                <p id="msgPop"></p>
+            </div>
+            <div id="tablero">
+                <table class="tg">
+                    <thead>
+                        <tr>
+                            <th class="tg-9wq8 fondo" rowspan="3" id="0">0</th>
+                            <th class="tg-0pky rojo trotar" id="3">3</th>
+                            <th class="tg-0pky negro trotar" id="6">6</th>
+                            <th class="tg-0pky rojo trotar" id="9">9</th>
+                            <th class="tg-0pky rojo trotar" id="12">12</th>
+                            <th class="tg-0pky negro trotar" id="15">15</th>
+                            <th class="tg-0pky rojo trotar" id="18">18</th>
+                            <th class="tg-0pky rojo trotar" id="21">21</th>
+                            <th class="tg-0pky negro trotar" id="24">24</th>
+                            <th class="tg-0pky rojo trotar" id="27">27</th>
+                            <th class="tg-0pky rojo trotar" id="30">30</th>
+                            <th class="tg-0pky negro trotar" id="33">33</th>
+                            <th class="tg-0pky rojo trotar" id="36">36</th>
+                            <th class="tg-0pky negro trotar" id="3-36">2 to 1</th>
+                        </tr>
+                        <tr>
+                            <th class="tg-0pky negro trotar" id="2">2</th>
+                            <th class="tg-0pky rojo trotar" id="5">5</th>
+                            <th class="tg-0pky negro trotar" id="8">8</th>
+                            <th class="tg-0pky negro trotar" id="11">11</th>
+                            <th class="tg-0pky rojo trotar" id="14">14</th>
+                            <th class="tg-0pky negro trotar" id="17">17</th>
+                            <th class="tg-0pky negro trotar" id="20">20</th>
+                            <th class="tg-0pky rojo trotar" id="23">23</th>
+                            <th class="tg-0pky negro trotar" id="26">26</th>
+                            <th class="tg-0pky negro trotar" id="29">29</th>
+                            <th class="tg-0pky rojo trotar" id="32">32</th>
+                            <th class="tg-0pky negro trotar" id="35">35</th>
+                            <th class="tg-0pky negro trotar" id="2-35">2 to 1</th>
+                        </tr>
+                        <tr>
+                            <th class="tg-0pky rojo trotar" id="1">1</th>
+                            <th class="tg-0pky negro trotar" id="4">4</th>
+                            <th class="tg-0pky rojo trotar" id="7">7</th>
+                            <th class="tg-0pky negro trotar" id="10">10</th>
+                            <th class="tg-0pky negro trotar" id="13">13</th>
+                            <th class="tg-0pky rojo trotar" id="16">16</th>
+                            <th class="tg-0pky rojo trotar" id="19">19</th>
+                            <th class="tg-0pky negro trotar" id="22">22</th>
+                            <th class="tg-0pky rojo trotar" id="25">25</th>
+                            <th class="tg-0pky negro trotar" id="28">28</th>
+                            <th class="tg-0pky negro trotar" id="31">31</th>
+                            <th class="tg-0pky rojo trotar" id="34">34</th>
+                            <th class="tg-0pky negro trotar" id="1-34">2 to 1</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="tg-0pky vacio"></td>
+                            <td class="tg-0pky fondo" colspan="4" id="1st">1st 12</td>
+                            <td class="tg-0pky fondo" colspan="4" id="2nd">2nd 12</td>
+                            <td class="tg-0pky fondo" colspan="4" id="3rd">3rd 12</td>
+
+                        </tr>
+                        <tr>
+                            <td class="tg-0pky vacio"></td>
+                            <td class="tg-0pky fondo" colspan="2" id="1-18">1 to 18</td>
+                            <td class="tg-0pky fondo" colspan="2" id="even">EVEN</td>
+                            <td class="tg-0pky fondo" colspan="2" id="red">PINK</td>
+                            <td class="tg-0pky fondo" colspan="2" id="black">BLUE</td>
+                            <td class="tg-0pky fondo" colspan="2" id="odd">ODD</td>
+                            <td class="tg-0pky fondo" colspan="2" id="19-36">19 to 36</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div id="hotcold">
+
+                <table id="hot">
+                    <thead>
+                        <th colspan="5">CALIENTES</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="cal1">1</td>
+                            <td id="cal2">2</td>
+                            <td id="cal3">3</td>
+                            <td id="cal4">4</td>
+                            <td id="cal5">5</td>
+                        </tr>
+                        <tr>
+                            <td id="calP1">0%</td>
+                            <td id="calP2">0%</td>
+                            <td id="calP3">0%</td>
+                            <td id="calP4">0%</td>
+                            <td id="calP5">0%</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table id="cold">
+                    <thead>
+                        <th colspan="5">FRIOS</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="fri1">36</td>
+                            <td id="fri2">35</td>
+                            <td id="fri3">34</td>
+                            <td id="fri4">33</td>
+                            <td id="fri5">32</td>
+                        </tr>
+                        <tr>
+                            <td id="friP1">0%</td>
+                            <td id="friP2">0%</td>
+                            <td id="friP3">0%</td>
+                            <td id="friP4">0%</td>
+                            <td id="friP5">0%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div id="notificacion">
+            <p>APOSTADO</p>
+            <p id="apostado">0 fichas</p>
+            <p>Tipo de apuesta</p>
+            <p id="tipoApos">Ninguna</p>
+            <p>POSIBLE GANANCIA</p>
+            <p id="posGanancia">0 fichas</p>
+            <p>GANANCIAS</p>
+            <p id="ganancia">0 fichas</p>
+        </div>
+        <div id="divRuleta">
+            <div id="ruleta">
+                
+                <img src="img/OIG.svg" id="imgRul">
+                <p id="numGanador">0</p>
+            </div>
+            <div id="ultimos">
+                <table id="ultNum">
+                    <thead>
+                        <th colspan="5">ULTIMOS NUMEROS</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="ult1">-</td>
+                            <td id="ult2">-</td>
+                            <td id="ult3">-</td>
+                            <td id="ult4">-</td>
+                            <td id="ult5">-</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Div ocultos para la insercion de fichas -->
+        <!-- Modal de Ingresar Dinero Ficticio -->
+        <div id="modalIngresar" class="modal">
+            <div class="modal-contenido">
+                <h2>Ingrese la cantidad de fichas</h2>
+                <p id="error"></p>
+                <input type="number" id="nuevasFichas">
+                <button id="meter">Ingresar fichas</button>
+                <button id="cerrar">Cancelar</button>
+            </div>
+        </div>
+
+        <!-- Modal de Numero ganador-->
+        <div id="modalGanador" class="modalG">
+            <div class="modal-contenido">
+                <h2 id="ganadora"></h2>
+                <p id="textoGanancias"></p>
+            </div>
+        </div>
+
+
+    </div>
+
+    </div>
+
+    <footer>
+        <div id="fichas">
+            <button id="c1"><img src="img/chip1.png"></button>
+            <button id="c2"><img src="img/chip2.png"></button>
+            <button id="c10"><img src="img/chip10.png"></button>
+            <button id="c50"><img src="img/chip50.png"></button>
+            <button id="c100"><img src="img/chip100.png"></button>
+            <button id="c200"><img src="img/chip200.png"></button>
+            <button id="c500"><img src="img/chip500.png"></button>
+            <button id="c1000" 2><img src="img/chip1000.png"></button>
+        </div>
+        <div id="botonF">
+            <div class="botonesJugar">
+                <button class="ingresar" id="bIngresar">INGRESAR</button>
+                <button class="retirar" id="bRetirar">RETIRAR</button>
+            </div>
+            <form id="meterF">
+                <label>¿ Cuantas fichas ?</label>
+                <input type="number" id="nuevasFichas">
+                <input type="button" id="meter" value="InsertarFichas">
+            </form>
+
+        </div>
+
+        <div id="saldo">
+            <p>Fichas:</p>
+            <p id="misFichas" th:text="${fichitas}"></p>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+
+</html>
